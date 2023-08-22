@@ -1,0 +1,21 @@
+query GetContinent {
+  continents{
+    name
+    code
+   }
+}
+
+query GetCountries($code: String!){
+  countries(filter:{continent:{eq:$code}}) {
+      name
+      code
+      awsRegion
+      capital
+      emojiU
+      emoji
+      states{
+        name
+        code
+      }
+    }
+}
